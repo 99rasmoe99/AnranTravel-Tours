@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Amran Tour & Travel – Lighter Ethiopia Journey</title>
+  <meta name="description" content="Discover Ethiopia's top 11 destinations with Amran Tours – lighter, brighter, and more inviting.">
+  <!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+  <style>
+    /* Affiliate disclosure styling */
+.affiliate-disclosure {
+  background: #fef3c7;
+  border-left: 4px solid #c28b1f;
+  padding: 12px 20px;
+  margin: 20px auto;
+  font-size: 0.75rem;
+  color: #5a4a2e;
+  text-align: center;
+  max-width: 1200px;
+  border-radius: 12px;
+}
+
+.affiliate-disclosure a {
+  color: #c28b1f;
+  text-decoration: underline;
+}
+
+.privacy-link {
+  cursor: pointer;
+  color: #c28b1f;
+  text-decoration: underline;
+}
+
+/* Privacy Modal (simple) */
+#privacyModal .modal-content {
+  max-width: 500px;
+}
+
+#privacyModal p {
+  margin: 15px 0;
+  line-height: 1.5;
+}
+
+#privacyModal ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+    /* ========== RESET & GLOBAL ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    section, div[id] {
+      scroll-margin-top: 80px;
+    }
+
+    /* ✨ LIGHTER THEME: background gradients, softer overlays, brighter cards */
+    :root {
+      --bg-dark: #f9fafb;        /* light background for body */
+      --bg-elevated: #ffffff;
+      --card-bg: #ffffff;
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+      --gold: #c28b1f;
+      --gold-light: #f3c26b;
+      --gold-soft: #fef3c7;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --shadow-soft: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02);
+      --transition-fast: 0.25s ease;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fefcf5 0%, #fff9ef 100%);
+      color: var(--text-main);
+    }
+
+    /* ========== HEADER (Semi-transparent light) ========== */
+    .global-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 32px;
+      background: rgba(255, 255, 245, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #ffe5b4;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .global-header .brand {
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      font-size: 1.2rem;
+      background: linear-gradient(135deg, #b87b1a, #e6a017);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .global-header .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .global-header .nav-links a {
+      color: #2c3e2f;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .global-header .nav-links a:hover {
+      color: #c28b1f;
+    }
+
+    /* ========== HERO SECTION — LIGHTER, VIBRANT, SOFTER OVERLAY ========== */
+    .hero-collage {
+      position: relative;
+      width: 100%;
+      height: 88vh;
+      min-height: 560px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.05);
+    }
+
+    /* 4‑image collage grid (still rich but brighter via brightness & gentle overlay) */
+    .collage-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .collage-item {
+      overflow: hidden;
+    }
+
+    .collage-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(1.02) contrast(1.02) saturate(1.05);
+      transition: transform 1.2s ease-out;
+    }
+
+    .collage-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* 🌞 LIGHTER OVERLAY: very soft gradient, almost transparent but readable */
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(125deg, rgba(255, 248, 225, 0.65) 0%, rgba(255, 235, 200, 0.4) 100%);
+      z-index: 2;
+    }
+
+    /* Hero text content — dark text for contrast, gold accents */
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      max-width: 880px;
+      padding: 24px;
+      background: rgba(255, 255, 245, 0.7);
+      backdrop-filter: blur(3px);
+      border-radius: 48px;
+      box-shadow: 0 18px 32px -12px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 215, 140, 0.5);
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #2c2418;
+      text-shadow: none;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-content h1 span {
+      background: linear-gradient(130deg, #b87b1a, #e6a017);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 28px;
+      color: #2b2b26;
+      font-weight: 450;
+      opacity: 0.9;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: #e6a017;
+      color: white;
+      font-weight: 700;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: 0.2s ease;
+      box-shadow: 0 6px 14px rgba(198, 128, 27, 0.25);
+    }
+
+    .hero-btn:hover {
+      background: #c2811a;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 22px rgba(194, 139, 31, 0.3);
+    }
+
+    /* ========== UNIFIED GOLD BUTTONS ========== */
+    .cta-btn.gold {
+      background: linear-gradient(105deg, #e6a017, #c2811a);
+      color: white;
+      padding: 10px 22px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      font-size: 0.85rem;
+      letter-spacing: 0.3px;
+    }
+
+    .cta-btn.gold:hover {
+      background: linear-gradient(105deg, #cf8c1a, #aa6f10);
+      transform: translateY(-2px);
+    }
+
+    /* ========== SECTION TITLES ========== */
+    .section-title {
+      color: #b87b1a;
+      margin-bottom: 28px;
+      font-size: 2rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    /* ADVENTURES GRID — clean light cards */
+    .adventures-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 32px;
+      padding: 16px 24px 48px;
+    }
+
+    .adventure-card {
+      background: var(--card-bg);
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid #f0e5d2;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+    }
+
+    .adventure-card:hover {
+      transform: translateY(-6px);
+      border-color: #f3cf8a;
+      box-shadow: 0 24px 40px -18px rgba(0, 0, 0, 0.12);
+    }
+
+    .adventure-card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      filter: brightness(0.98) contrast(1.02);
+    }
+
+    .adventure-card-content {
+      padding: 22px 20px 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .adventure-card h3 {
+      color: #c28b1f;
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .adventure-card p {
+      color: #4b5563;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      line-height: 1.45;
+    }
+
+    .card-link {
+      color: #b87b1a;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+    }
+
+    .adventure-card .booking-buttons {
+      margin-top: auto;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* BOOKING SECTION */
+    .booking-section {
+      padding: 70px 20px;
+      background: #fffaf0;
+      text-align: center;
+      border-radius: 48px 48px 0 0;
+      margin-top: 20px;
+    }
+
+    .booking-title {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #2c2418;
+    }
+
+    .booking-subtitle {
+      font-size: 1.1rem;
+      color: #5a4a2e;
+      max-width: 680px;
+      margin: 12px auto 32px;
+    }
+
+    .booking-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .booking-note {
+      font-size: 0.9rem;
+      color: #7a6648;
+    }
+
+    /* INFO SECTIONS light */
+    .info-section {
+      max-width: 1200px;
+      margin: 56px auto 0;
+      padding: 32px 40px;
+      background: #ffffffdd;
+      backdrop-filter: blur(2px);
+      border-radius: 32px;
+      border: 1px solid #faeaca;
+      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.04);
+    }
+
+    .info-section h2 {
+      color: #c28b1f;
+      margin-bottom: 16px;
+      font-size: 1.8rem;
+    }
+
+    .info-section p, .contact-details p {
+      color: #2c3e2f;
+      line-height: 1.5;
+    }
+
+    /* MODALS */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 248, 235, 0.95);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(6px);
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 40px;
+      padding: 32px;
+      max-width: 520px;
+      width: 90%;
+      border: 1px solid #ffe0b5;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 32px 56px -24px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-content h2 {
+      color: #c28b1f;
+      margin-bottom: 18px;
+    }
+
+    .modal-content input, .modal-content select, .modal-content textarea {
+      width: 100%;
+      padding: 12px 16px;
+      margin: 10px 0;
+      background: #fefaf2;
+      border: 1px solid #eddaba;
+      border-radius: 28px;
+      font-family: inherit;
+      color: #1f2937;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      font-size: 32px;
+      cursor: pointer;
+      color: #a28358;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: #e6a017;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 60px;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    /* Social block premium */
+    .social-block {
+      display: flex;
+      gap: 26px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 28px 0 16px;
+    }
+
+    .social-block a {
+      color: #b87b1a;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .social-block a:hover {
+      color: #e6a017;
+      transform: translateY(-2px);
+    }
+
+    /* footer light */
+    .global-footer {
+      background: #fff5e8;
+      border-top: 1px solid #ffe1bc;
+      padding: 48px 24px 24px;
+      margin-top: 64px;
+      border-radius: 36px 36px 0 0;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+    }
+
+    .footer-section h4 {
+      color: #b87b1a;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links a, .footer-section p {
+      color: #4b5563;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #f0e0cb;
+      padding-top: 28px;
+      margin-top: 28px;
+      color: #7c6b4b;
+    }
+
+    @media (max-width: 768px) {
+      .global-header {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .hero-content h1 {
+        font-size: 1.9rem;
+      }
+      .hero-content p {
+        font-size: 0.95rem;
+      }
+      .hero-collage {
+        height: 70vh;
+      }
+      .hero-content {
+        background: rgba(255, 255, 245, 0.8);
+        margin: 0 16px;
+      }
+      .section-title {
+        font-size: 1.7rem;
+      }
+      .adventures-grid {
+        padding: 16px;
+        gap: 20px;
+      }
+      .info-section {
+        margin: 32px 16px;
+        padding: 24px;
+      }
+      .booking-title {
+        font-size: 2rem;
+      }
+    }
+
+    /* offline notification */
+    .offline-toast {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #2c3e2f;
+      color: #ffeaC0;
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      z-index: 999;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero section: LIGHTER, brighter images with local folder path updates -->
+<section class="hero" id="home">
+ <div class="hero"><img src="c:\Users\moe\OneDrive\Desktop\amran\images\ethiopia-hero-ai.jpg"></div>
+  
+  <!-- much lighter overlay: golden warmth -->
+</section>
+
+<!-- Header Navigation (light) -->
+<header class="global-header">
+  <div class="brand">✨ Amran Tour & Travel</div>
+  <nav class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#adventures">Adventures</a>
+    <a href="#about">About</a>
+    <a href="#booking">Booking</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- Booking Section -->
+<section id="booking" class="booking-section">
+  <div class="container">
+    <h1 class="booking-title">Plan Your Ethiopian Escape</h1>
+    <p class="booking-subtitle">Secure tours, hotels, and authentic travel experiences with trusted partners.</p>
+    <div class="booking-buttons">
+      <a href="https://www.getyourguide.com/?partner_id=PTY2GFH&cmp=amraan" class="cta-btn gold" target="_blank">📅 Book Tours on GetYourGuide</a>
+      <a href="https://www.expedia.com/affiliates/expedia-home.tjS22tu" class="cta-btn gold" target="_blank">🏨 Reserve Hotels on Expedia</a>
+    </div>
+    <div class="booking-note"><p>Custom itineraries, private tours, and group discounts — contact us directly.</p></div>
+  </div>
+</section>
+
+<!-- Header Navigation (light) -->
+<header class="global-header">
+  <div class="brand">✨ Amran Tour & Travel</div>
+  <nav class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#adventures">Adventures</a>
+    <a href="#about">About</a>
+    <a href="#booking">Booking</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+<!-- Instead of direct href, use onclick -->
+<a href="#" class="cta-btn gold" 
+   onclick="return trackAffiliateClick('Lalibela', 'getyourguide', 'https://www.getyourguide.com/?partner_id=PTY2GFH&cmp=amraan&utm_source=amran_travel&utm_medium=affiliate&utm_campaign=lalibela_churches')">
+   Book Tour
+</a>
+
+<a href="#" class="cta-btn gold" 
+   onclick="return trackAffiliateClick('Lalibela', 'expedia', 'https://www.expedia.com/affiliates/expedia-home.tjS22tu?utm_source=amran&utm_medium=affiliate&utm_campaign=lalibela_hotel')">
+   Hotel
+</a>
+<a href="#" class="cta-btn gold" 
+   onclick="return trackAffiliateClick('General', 'getyourguide', 'https://www.getyourguide.com/?partner_id=PTY2GFH&cmp=amraan&utm_source=amran_travel&utm_medium=affiliate&utm_campaign=booking_section')">
+   📅 Book Tours on GetYourGuide
+</a>
+
+<a href="#" class="cta-btn gold" 
+   onclick="return trackAffiliateClick('General', 'expedia', 'https://www.expedia.com/affiliates/expedia-home.tjS22tu?utm_source=amran&utm_medium=affiliate&utm_campaign=booking_section_hotels')">
+   🏨 Reserve Hotels on Expedia
+</a>
+<<!-- Adventures Section -->
+<h2 class="section-title" id="adventures">🌟 Featured Adventures</h2>
+<div class="adventures-grid">
+
+  <!-- Dynamically generate the 11 destinations but keep structure identical, using consistent data -->
+  <!-- Tour 1 Lalibela -->
+  <div class="adventure-card" onclick="openTourModal('Lalibela Rock-Hewn Churches', '11 medieval monolithic churches carved from solid rock. UNESCO World Heritage Site.', 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/12/6e/a0/61.jpg', ['UNESCO World Heritage Site', '11 medieval rock-hewn churches', 'Spiritual ceremonies', 'Local village experience'])">
+    <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/12/6e/a0/61.jpg" alt="Lalibela"><div class="adventure-card-content"><h3>🏛️ Lalibela Rock Churches</h3><p>11 medieval monolithic churches carved from solid rock. A true wonder of faith and engineering.</p><a href="#" class="card-link" onclick="event.stopPropagation();">Explore →</a><div class="booking-buttons"><a href="https://www.getyourguide.com/?partner_id=PTY2GFH&cmp=amraan" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Book Tour</a><a href="https://www.expedia.com/affiliates/expedia-home.tjS22tu" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Hotel</a></div></div></div>
+
+  <!-- Simien -->
+  <div class="adventure-card" onclick="openTourModal('Simien Mountains Trekking', 'Dramatic escarpments, deep valleys, and endemic wildlife including Gelada baboons.', 'https://tse3.mm.bing.net/th/id/OIP.Se60DWP9oDjA_nlQ2ZH46AHaFN?w=968&h=681&rs=1&pid=ImgDetMain&o=7&rm=3', ['UNESCO landscape', 'Gelada baboons', 'Ras Dashen', 'Cliff-edge trekking'])">
+    <img src="https://tse3.mm.bing.net/th/id/OIP.Se60DWP9oDjA_nlQ2ZH46AHaFN?w=968&h=681&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Simien"><div class="adventure-card-content"><h3>🏔️ Simien Mountains</h3><p>Dramatic escarpments and endemic wildlife in Africa's most breathtaking highlands.</p><a href="#" class="card-link" onclick="event.stopPropagation();">Explore →</a><div class="booking-buttons"><a href="https://www.getyourguide.com/?partner_id=PTY2GFH&cmp=amraan" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Book Tour</a><a href="https://www.expedia.com/affiliates/expedia-home.tjS22tu" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Hotel</a></div></div></div>
+
+  <!-- Danakil -->
+  <div class="adventure-card" onclick="openTourModal('Danakil Depression Expedition', 'Surreal landscapes, sulfur fields, and Earth\'s only active lava lake.', 'https://dynamic-media.tacdn.com/media/photo-o/2e/fe/ea/ad/caption.jpg?w=700&h=500&s=1', ['Dallol sulfur fields', 'Erta Ale lava lake', 'Camel caravans', 'Salt flats'])">
+    <img src="https://dynamic-media.tacdn.com/media/photo-o/2e/fe/ea/ad/caption.jpg?w=700&h=500&s=1" alt="Danakil"><div class="adventure-card-content"><h3>🌋 Danakil Depression</h3><p>Surreal landscapes, sulfur fields, and one of the hottest places on Earth.</p><a href="#" class="card-link" onclick="event.stopPropagation();">Explore →</a><div class="booking-buttons"><a href="https://www.getyourguide.com/?partner_id=PTY2GFH&cmp=amraan" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Book Tour</a><a href="https://www.expedia.com/affiliates/expedia-home.tjS22tu" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Hotel</a></div></div></div>
+
+  <!-- Omo Valley -->
+  <div class="adventure-card" onclick="openTourModal('Omo Valley Cultural Experience', 'Meet diverse tribes and experience one of the world\'s richest living cultures.', 'https://tse4.mm.bing.net/th/id/OIP.Qe0TYoanX5NNbTnnk4OTygHaEO?rs=1&pid=ImgDetMain&o=7&rm=3', ['Hamar tribe', 'Mursi lip plates', 'Karo body painting', 'Cultural ceremonies'])">
+    <img src="https://tse4.mm.bing.net/th/id/OIP.Qe0TYoanX5NNbTnnk4OTygHaEO?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Omo"><div class="adventure-card-content"><h3>🎭 Omo Valley</h3><p>Meet diverse tribes and experience living cultures along the Omo River.</p><a href="#" class="card-link" onclick="event.stopPropagation();">Explore →</a><div class="booking-buttons"><a href="https://www.getyourguide.com/?partner_id=PTY2GFH&cmp=amraan" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Book Tour</a><a href="https://www.expedia.com/affiliates/expedia-home.tjS22tu" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Hotel</a></div></div></div>
+
+  <!-- Harar -->
+  <div class="adventure-card" onclick="openTourModal('Harar Walled City & Hyenas', 'Ancient walled city known for narrow alleys, colorful markets, and hyena feeding ritual.', 'https://media.istockphoto.com/id/1326887566/photo/traditional-harari-house.jpg?s=1024x1024&w=is&k=20&c=SZ-GtwfLn0IKtF7UjI5baQAvPFuIKJZ6sEQIBg62PfA=', ['UNESCO walled city', 'Hyena feeding ceremony', 'Harari houses', 'Colorful markets'])">
+    <img src="https://media.istockphoto.com/id/1326887566/photo/traditional-harari-house.jpg?s=1024x1024&w=is&k=20&c=SZ-GtwfLn0IKtF7UjI5baQAvPFuIKJZ6sEQIBg62PfA=" alt="Harar"><div class="adventure-card-content"><h3>🏰 Harar Walled City</h3><p>Ancient city with 368 alleys, vibrant markets, and the famous hyena feeding.</p><a href="#" class="card-link" onclick="event.stopPropagation();">Explore →</a><div class="booking-buttons"><a href="https://www.getyourguide.com/?partner_id=PTY2GFH&cmp=amraan" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Book Tour</a><a href="https://www.expedia.com/affiliates/expedia-home.tjS22tu" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Hotel</a></div></div></div>
+
+  <!-- Gondar -->
+  <div class="adventure-card" onclick="openTourModal('Gondar Castles & History', 'Royal castles, ancient baths, and imperial history of Ethiopia\'s Camelot.', 'https://dynamic-media.tacdn.com/media/photo-o/2f/18/b4/a6/caption.jpg?w=1400&h=1000&s=1', ['Fasil Ghebbi', 'Fasilides Bath', 'Debre Berhan Selassie', 'Walking tour'])">
+    <img src="https://dynamic-media.tacdn.com/media/photo-o/2f/18/b4/a6/caption.jpg?w=1400&h=1000&s=1" alt="Gondar"><div class="adventure-card-content"><h3>👑 Gondar Castles</h3><p>Royal castles and imperial history in the "Camelot of Africa".</p><a href="#" class="card-link" onclick="event.stopPropagation();">Explore →</a><div class="booking-buttons"><a href="https://www.getyourguide.com/?partner_id=PTY2GFH&cmp=amraan" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Book Tour</a><a href="https://www.expedia.com/affiliates/expedia-home.tjS22tu" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Hotel</a></div></div></div>
+
+  <!-- Addis -->
+  <div class="adventure-card" onclick="openTourModal('Addis Ababa City & Culture', 'Vibrant mix of museums, cuisine, coffee culture, and bustling markets.', 'https://images.pexels.com/photos/30177512/pexels-photo-30177512/free-photo-of-addis-ababa-skyline-at-sunset.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=2', ['National Museum', 'Mercato', 'Ethiopian cuisine', 'Coffee ceremony'])">
+    <img src="https://images.pexels.com/photos/30177512/pexels-photo-30177512/free-photo-of-addis-ababa-skyline-at-sunset.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&dpr=2" alt="Addis"><div class="adventure-card-content"><h3>🏙️ Addis Ababa</h3><p>Vibrant capital with rich history, museums, and authentic coffee culture.</p><a href="#" class="card-link" onclick="event.stopPropagation();">Explore →</a><div class="booking-buttons"><a href="https://www.getyourguide.com/?partner_id=PTY2GFH&cmp=amraan" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Book Tour</a><a href="https://www.expedia.com/affiliates/expedia-home.tjS22tu" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Hotel</a></div></div></div>
+
+  <!-- Lake Tana -->
+  <div class="adventure-card" onclick="openTourModal('Lake Tana Monasteries', 'Ancient island monasteries and the source of the Blue Nile.', 'https://dynamic-media.tacdn.com/media/photo-o/2f/06/12/75/caption.jpg?w=700&h=500&s=1', ['Boat trip', 'Ancient manuscripts', 'Blue Nile source', 'Markets'])">
+    <img src="https://dynamic-media.tacdn.com/media/photo-o/2f/06/12/75/caption.jpg?w=700&h=500&s=1" alt="Tana"><div class="adventure-card-content"><h3>⛵ Lake Tana Monasteries</h3><p>Ancient island monasteries and the source of the Blue Nile.</p><a href="#" class="card-link" onclick="event.stopPropagation();">Explore →</a><div class="booking-buttons"><a href="https://www.getyourguide.com/?partner_id=PTY2GFH&cmp=amraan" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Book Tour</a><a href="https://www.expedia.com/affiliates/expedia-home.tjS22tu" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Hotel</a></div></div></div>
+
+  <!-- Arba Minch -->
+  <div class="adventure-card" onclick="openTourModal('Arba Minch Lakes & Wildlife', 'Lush forests, panoramic viewpoints, and wildlife in Nech Sar National Park.', 'https://th.bing.com/th?&id=OVP.7aQTZzMBnIEmmhgH3OAXFAHgFo&w=313&h=175&c=7&pid=2.1&rs=1', ['Crocodile Market', 'Nech Sar Park', '40 Springs', 'Dorze village'])">
+    <img src="https://th.bing.com/th?&id=OVP.7aQTZzMBnIEmmhgH3OAXFAHgFo&w=313&h=175&c=7&pid=2.1&rs=1" alt="Arba Minch"><div class="adventure-card-content"><h3>🦒 Arba Minch</h3><p>Lush forests, wildlife encounters, and the famous "Crocodile Market".</p><a href="#" class="card-link" onclick="event.stopPropagation();">Explore →</a><div class="booking-buttons"><a href="https://www.getyourguide.com/?partner_id=PTY2GFH&cmp=amraan" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Book Tour</a><a href="https://www.expedia.com/affiliates/expedia-home.tjS22tu" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Hotel</a></div></div></div>
+
+  <!-- Blue Nile Falls -->
+  <div class="adventure-card" onclick="openTourModal('Blue Nile Falls - Tis Issat', 'Ethiopia\'s iconic waterfall — powerful, misty, and unforgettable.', 'https://as1.ftcdn.net/v2/jpg/01/53/13/40/1000_F_153134060_id0Ggio9joo4kxNDhioZqtucnLpDCWxk.jpg', ['Scenic hike', 'Suspension bridge', 'Local villages', 'Viewpoints'])">
+    <img src="https://as1.ftcdn.net/v2/jpg/01/53/13/40/1000_F_153134060_id0Ggio9joo4kxNDhioZqtucnLpDCWxk.jpg" alt="Blue Nile"><div class="adventure-card-content"><h3>💦 Blue Nile Falls</h3><p>Ethiopia's iconic waterfall — the "Smoking Water" of Tis Issat.</p><a href="#" class="card-link" onclick="event.stopPropagation();">Explore →</a><div class="booking-buttons"><a href="https://www.getyourguide.com/?partner_id=PTY2GFH&cmp=amraan" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Book Tour</a><a href="https://www.expedia.com/affiliates/expedia-home.tjS22tu" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Hotel</a></div></div></div>
+
+  <!-- Axum -->
+  <div class="adventure-card" onclick="openTourModal('Axum Obelisk & Kingdom', 'The iconic obelisk of Axum — a symbol of Ethiopia\'s ancient civilization.', 'https://covenantethiopiatours.com/wp-content/uploads/Lalibela-Axum-Rock-Hewn-Churches-Danakil-Depression-Covenant-Ethiopia-Tours-Image-1.webp', ['Axum Obelisks', 'St. Mary of Zion', 'Queen of Sheba Palace', 'Ezana inscription'])">
+    <img src="https://covenantethiopiatours.com/wp-content/uploads/Lalibela-Axum-Rock-Hewn-Churches-Danakil-Depression-Covenant-Ethiopia-Tours-Image-1.webp" alt="Axum"><div class="adventure-card-content"><h3>🗿 Axum Obelisk</h3><p>Ancient stelae fields and the heart of Ethiopia’s earliest civilization.</p><a href="#" class="card-link" onclick="event.stopPropagation();">Explore →</a><div class="booking-buttons"><a href="https://www.getyourguide.com/?partner_id=PTY2GFH&cmp=amraan" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Book Tour</a><a href="https://www.expedia.com/affiliates/expedia-home.tjS22tu" class="cta-btn gold" target="_blank" onclick="event.stopPropagation();">Hotel</a></div></div></div>
+</div>
+
+<div class="social-block">
+  <a href="https://www.facebook.com/ras.moe.9" target="_blank">📘 Facebook</a>
+  <a href="https://www.instagram.com/raslejmoe/" target="_blank">📸 Instagram</a>
+  <a href="https://twitter.com/YourPage" target="_blank">🐦 Twitter</a>
+  <a href="https://www.tiktok.com/@bismillahi610?lang=en" target="_blank">🎵 TikTok</a>
+  <a href="mailto:raslejmoe@gmail.com">📧 Newsletter</a>
+</div>
+
+<!-- About & Contact Sections -->
+<div class="info-section" id="about"><h2>📖 About Amran Tour & Travel</h2><p>With over a decade of expertise, we bring Ethiopia’s wonders to life — authentic, responsible, and unforgettable. Our local guides craft journeys blending history, adventure, and culture.</p></div>
+<div class="info-section" id="contact"><h2>📞 Contact Us</h2><div class="contact-details"><p>📞 Phone: <strong>770-568-9920</strong></p><p>✉️ Email: <strong>mulatm62@gmail.com</strong></p><p>📍 Address: <strong>631 Sweet Ashley Way, Loganville, GA 30052</strong></p><p>⏰ Hours: <strong>Mon-Sat, 9am-6pm EST</strong></p></div><button class="cta-btn gold" style="margin-top: 20px;" onclick="openBookingModal(null, 'General Feedback')">Send Feedback</button></div>
+
+<footer class="global-footer"><div class="footer-content"><div class="footer-section"><h4>✨ Amran Tour & Travel</h4><p>Discover Ethiopia with heart & expertise.</p></div><div class="footer-links"><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#adventures">Adventures</a></li><li><a href="#about">About</a></li><li><a href="#booking">Booking</a></li></ul></div><div class="footer-section"><h4>Connect</h4><p>📘 FB | 📸 IG | 🐦 X | 🎵 TikTok</p></div></div><div class="footer-bottom"><p>© 2025 Amran Tour & Travel. Light & bright journeys across Ethiopia.</p></div></footer>
+<!-- AFFILIATE DISCLOSURE (LEGAL REQUIREMENT) -->
+<div class="affiliate-disclosure">
+  <p>🔗 <strong>Affiliate Disclosure:</strong> Amran Tour & Travel participates in the GetYourGuide Affiliate Program and Expedia Affiliate Program. 
+  When you book through our links, we may earn a commission at <strong>no extra cost to you</strong>. 
+  We do not process payments or handle bookings directly — all transactions are with our trusted partners.</p>
+  <p style="margin-top: 8px;">
+    <span class="privacy-link" onclick="openPrivacyModal()">📋 Privacy Policy</span> | 
+    <span class="privacy-link" onclick="openCookieInfo()">🍪 Cookie Information</span>
+  </p>
+</div>
+
+<!-- PRIVACY MODAL -->
+<div id="privacyModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closePrivacyModal()">&times;</span>
+    <h2>📋 Privacy Policy</h2>
+    <p><strong>Amran Tour & Travel</strong> respects your privacy. Here's what you need to know:</p>
+    
+    <h3 style="color: #c28b1f; margin-top: 20px;">What we collect:</h3>
+    <p>We do <strong>not</strong> collect, store, or process any personal data directly. The contact form sends inquiries to email — no database storage.</p>
+    
+    <h3 style="color: #c28b1f; margin-top: 20px;">Third-Party Cookies:</h3>
+    <p>Our affiliate partners (GetYourGuide and Expedia) may set cookies when you click their links. These cookies:</p>
+    <ul>
+      <li>Track referrals for commission purposes</li>
+      <li>Do NOT collect personal identifiable information</li>
+      <li>Typically expire within 7-30 days</li>
+    </ul>
+    
+    <h3 style="color: #c28b1f; margin-top: 20px;">Your Rights:</h3>
+    <p>You can disable cookies in your browser settings at any time. This may affect affiliate tracking but not your browsing experience.</p>
+    
+    <p style="margin-top: 20px; font-size: 0.8rem;">Last updated: May 2026</p>
+    <button class="cta-btn gold" onclick="closePrivacyModal()" style="margin-top: 15px;">Got it</button>
+  </div>
+</div>
+
+<!-- COOKIE INFO MODAL -->
+<div id="cookieModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeCookieModal()">&times;</span>
+    <h2>🍪 Cookie Information</h2>
+    <p>This site uses affiliate cookies for commission tracking only.</p>
+    <h3 style="color: #c28b1f;">What are cookies?</h3>
+    <p>Small text files stored by your browser that help remember referral information.</p>
+    <h3 style="color: #c28b1f;">How to disable:</h3>
+    <ul>
+      <li><strong>Chrome:</strong> Settings → Privacy & Security → Cookies</li>
+      <li><strong>Safari:</strong> Preferences → Privacy → Block all cookies</li>
+      <li><strong>Firefox:</strong> Options → Privacy & Security → Cookies</li>
+    </ul>
+    <p>Disabling cookies won't break the site but will prevent affiliate commission tracking.</p>
+    <button class="cta-btn gold" onclick="closeCookieModal()" style="margin-top: 15px;">Close</button>
+  </div>
+</div>
+
+<!-- MODALS -->
+<div id="tourModal" class="modal"><div class="modal-content"><span class="close-modal" onclick="closeTourModal()">&times;</span><h2 id="tourModalTitle"></h2><img id="tourModalImage" src="" alt="Tour" style="width:100%; border-radius: 24px; margin: 12px 0;"><p id="tourModalDesc" style="color:#374151;"></p><h3 style="color:#c28b1f;">✨ Highlights</h3><ul id="tourModalHighlights" style="margin-left:20px;"></ul></div></div>
+<div id="bookingModal" class="modal"><div class="modal-content"><span class="close-modal" onclick="closeBookingModal()">&times;</span><h2>📅 Request a Journey</h2><form id="bookingForm" onsubmit="handleBookingSubmit(event)"><input type="text" id="inquiryTypeInput" readonly style="background:#f3ede3;"><input type="text" id="userName" placeholder="Full Name" required><input type="email" id="userEmail" placeholder="Email" required><input type="tel" id="userPhone" placeholder="Phone"><input type="date" id="travelDate"><select id="travelers"><option>1 Traveler</option><option>2</option><option>3</option><option>4</option><option>5+</option></select><textarea id="specialRequests" placeholder="Your message..."></textarea><button type="submit" class="cta-btn gold submit-btn">Send Inquiry</button></form></div></div>
+
+<script>
+  // Track when user opens a tour modal
+function openTourModal(name, desc, imgUrl, highlights) { 
+  // Track this view
+  if(typeof gtag !== 'undefined') {
+    gtag('event', 'view_destination', {
+      'event_category': 'engagement',
+      'event_label': name,
+      'destination': name
+    });
+  }
+  
+  // Rest of your existing openTourModal code...
+  currentTourName = name; 
+  document.getElementById('tourModalTitle').innerText = name; 
+  document.getElementById('tourModalDesc').innerText = desc; 
+  document.getElementById('tourModalImage').src = imgUrl; 
+  const list = document.getElementById('tourModalHighlights'); 
+  list.innerHTML = ''; 
+  highlights.forEach(h => { const li = document.createElement('li'); li.innerText = h; list.appendChild(li); }); 
+  document.getElementById('tourModal').classList.add('active'); 
+}// Scroll depth tracking
+let maxScroll = 0;
+window.addEventListener('scroll', function() {
+  const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  if(scrollPercent > maxScroll) {
+    maxScroll = Math.floor(scrollPercent);
+    if(maxScroll === 25 || maxScroll === 50 || maxScroll === 75 || maxScroll === 100) {
+      if(typeof gtag !== 'undefined') {
+        gtag('event', 'scroll_depth', {
+          'event_category': 'engagement',
+          'event_label': `${maxScroll}%`,
+          'value': maxScroll
+        });
+      }
+      console.log(`📜 User scrolled ${maxScroll}%`);
+    }
+  }
+});
+function handleBookingSubmit(e) { 
+  e.preventDefault(); 
+  
+  const userName = document.getElementById('userName').value;
+  const inquiryType = document.getElementById('inquiryTypeInput').value;
+  
+  // Track form submission
+  if(typeof gtag !== 'undefined') {
+    gtag('event', 'form_submit', {
+      'event_category': 'lead',
+      'event_label': inquiryType,
+      'value': 1
+    });
+  }
+  
+  alert(`✨ Thank you ${userName}! We'll reach out within 24h.`); 
+  closeBookingModal(); 
+}
+  // Affiliate Click Tracking with UTM parameters
+function trackAffiliateClick(destination, partner, url) {
+  // Send to Google Analytics
+  if(typeof gtag !== 'undefined') {
+    gtag('event', 'affiliate_click', {
+      'event_category': 'affiliate',
+      'event_label': destination,
+      'value': 1,
+      'destination': destination,
+      'partner': partner
+    });
+  }
+  
+  // Also log to console for debugging
+  console.log(`🔗 Affiliate Click: ${destination} via ${partner}`);
+  
+  // Store in localStorage for session tracking
+  let clicks = JSON.parse(localStorage.getItem('affiliate_clicks') || '[]');
+  clicks.push({
+    destination: destination,
+    partner: partner,
+    timestamp: new Date().toISOString()
+  });
+  localStorage.setItem('affiliate_clicks', JSON.stringify(clicks.slice(-50))); // Keep last 50
+  
+  // Open the link
+  window.open(url, '_blank');
+  return false;
+}
+  // Privacy & Cookie Modal Functions
+function openPrivacyModal() {
+  document.getElementById('privacyModal').classList.add('active');
+}
+
+function closePrivacyModal() {
+  document.getElementById('privacyModal').classList.remove('active');
+}
+
+function openCookieInfo() {
+  document.getElementById('cookieModal').classList.add('active');
+}
+
+function closeCookieModal() {
+  document.getElementById('cookieModal').classList.remove('active');
+}
+
+// Update window.onclick to handle new modals
+// Replace existing window.onclick with this:
+window.onclick = function(e) {
+  if(e.target === document.getElementById('tourModal')) closeTourModal();
+  if(e.target === document.getElementById('bookingModal')) closeBookingModal();
+  if(e.target === document.getElementById('privacyModal')) closePrivacyModal();
+  if(e.target === document.getElementById('cookieModal')) closeCookieModal();
+};
+  // Modal logic
+  let currentTourName = '';
+  function openTourModal(name, desc, imgUrl, highlights) { 
+    currentTourName = name; 
+    document.getElementById('tourModalTitle').innerText = name; 
+    document.getElementById('tourModalDesc').innerText = desc; 
+    document.getElementById('tourModalImage').src = imgUrl; 
+    const list = document.getElementById('tourModalHighlights'); 
+    list.innerHTML = ''; 
+    highlights.forEach(h => { const li = document.createElement('li'); li.innerText = h; list.appendChild(li); }); 
+    document.getElementById('tourModal').classList.add('active'); 
+  }
+  function closeTourModal() { document.getElementById('tourModal').classList.remove('active'); }
+  function openBookingModal(tourName, type) { let val = tourName ? `Tour: ${tourName}` : type; document.getElementById('inquiryTypeInput').value = val; document.getElementById('bookingModal').classList.add('active'); }
+  function closeBookingModal() { document.getElementById('bookingModal').classList.remove('active'); document.getElementById('bookingForm').reset(); }
+  function handleBookingSubmit(e) { e.preventDefault(); alert(`✨ Thank you ${document.getElementById('userName').value}! We'll reach out within 24h.`); closeBookingModal(); }
+  window.onclick = function(e) { if(e.target === document.getElementById('tourModal')) closeTourModal(); if(e.target === document.getElementById('bookingModal')) closeBookingModal(); };
+  document.querySelectorAll('.adventure-card .cta-btn.gold, .adventure-card .card-link').forEach(el => el.addEventListener('click', (e) => e.stopPropagation()));
+
+  // ---------- OFFLINE SUPPORT & SERVICE WORKER ----------
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').then(reg => {
+        console.log('Service Worker registered with scope:', reg.scope);
+      }).catch(err => {
+        console.warn('Service worker registration failed:', err);
+      });
+    });
+  }
+  // Add small offline indicator (simple)
+  window.addEventListener('offline', () => {
+    let toast = document.querySelector('.offline-toast') || (() => { let d=document.createElement('div'); d.className='offline-toast'; d.innerText='📴 You are offline — images and site are still available.'; document.body.appendChild(d); return d; })();
+    if(!document.querySelector('.offline-toast')) document.body.appendChild(toast);
+  });
+  window.addEventListener('online', () => { let t=document.querySelector('.offline-toast'); if(t) t.remove(); });
+</script>
+
+<script>
+  // SW code inline registration for full offline cache of images/folder
+  // Because we want images to be cached regardless, we'll auto-generate cache manifest via fetch
+  (function registerOfflineCache() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(console.log);
+      // Also add manual cache for images (backup)
+      caches.open('amran-images-v1').then(cache => {
+        const imagePaths = [
+          'images/lalibela-local.jpg', 'images/simien-local.jpg', 'images/danakil-local.jpg', 'images/omo-local.jpg', 'images/harar-local.jpg',
+          'images/gondar-local.jpg', 'images/addis-local.jpg', 'images/tana-local.jpg', 'images/arba-local.jpg', 'images/blue-nile-local.jpg',
+          'images/axum-local.jpg', 'images/ethiopia-hero-ai.jpg'
+        ];
+        imagePaths.forEach(img => cache.add(img).catch(e=>console.log('cache not available yet')));
+      });
+    }
+  })();
+</script>
+
+<!-- Create a minimal service worker script dynamically inline to ensure offline caching for all local images -->
+<script id="sw-script-generator">
+  (function createServiceWorkerFile() {
+    const swCode = `const CACHE_NAME = 'amran-v2';
+const IMAGES_TO_CACHE = [
+  '/images/lalibela-local.jpg', '/images/simien-local.jpg', '/images/danakil-local.jpg', '/images/omo-local.jpg', '/images/harar-local.jpg',
+  '/images/gondar-local.jpg', '/images/addis-local.jpg', '/images/tana-local.jpg', '/images/arba-local.jpg', '/images/blue-nile-local.jpg',
+  '/images/axum-local.jpg', '/images/ethiopia-hero-ai.jpg'
+];
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(IMAGES_TO_CACHE).catch(err => console.warn(err)))
+  );
+  self.skipWaiting();
+});
+self.addEventListener('fetch', event => {
+  const url = new URL(event.request.url);
+  if (IMAGES_TO_CACHE.some(img => url.pathname === img || url.pathname.endsWith(img.split('/').pop()))) {
+    event.respondWith(
+      caches.match(event.request).then(response => response || fetch(event.request).then(fetchRes => {
+        return caches.open(CACHE_NAME).then(cache => { cache.put(event.request, fetchRes.clone()); return fetchRes; });
+      }).catch(() => caches.match(event.request)))
+    );
+  } else {
+    event.respondWith(fetch(event.request).catch(() => caches.match(event.request)));
+  }
+});`;
+    const blob = new Blob([swCode], {type: 'application/javascript'});
+    const url = URL.createObjectURL(blob);
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register(url).then(reg => console.log('dynamic sw ok')).catch(e=>console.warn(e));
+    }
+  })();
+</script>
+</body>
+</html>
